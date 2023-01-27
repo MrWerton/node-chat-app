@@ -22,22 +22,7 @@ export class UserRepositoryImp implements UserRepository{
         return null;
     }
    
-    async get(id: string): Promise<User| null > {
-    const user = await this._client.user.findFirst({
-        where:{
-            id: id
-        }
-    })
-
-    if(user){
-        const {email, id: idUser,name, password, photo_url} = user;
-        const userToEntity = User.create({email, name, password, photo_url}, idUser);
-
-        return userToEntity;
-    }
-    
-    return null;
-    }
+  
    async getAll(): Promise<User[]> {
         const users = await this._client.user.findMany();
 

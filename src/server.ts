@@ -4,12 +4,15 @@ import 'express-async-errors'
 import { CreateUserController } from "./features/user/usecases/createUser/create_user_controller";
 import './core/containers/container'
 import { handleErrors } from "./core/middlewares/handle_errors";
+import { GetUsersController } from "./features/user/usecases/getUserUseCase/get_users_controller";
 const app = express();
 
 const createUserController = new CreateUserController()
+const getUserController = new GetUsersController()
 
 app.use(express.json())
 app.post('/',createUserController.handle);
+app.get('/',getUserController.handle);
 app.use(handleErrors)
 
 

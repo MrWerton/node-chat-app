@@ -1,10 +1,10 @@
 abstract class Entity<T>{
-    public props: T
+    public data: T
     public id?: string
 
-    constructor(props: T, id?:string){
+    constructor(data: T, id?:string){
         this.id = id;
-        this.props = props;
+        this.data = data;
     }
 
 }

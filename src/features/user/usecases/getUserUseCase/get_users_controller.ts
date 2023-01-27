@@ -7,7 +7,6 @@ export class GetUsersController{
    async handle(request: Request, response: Response){
         const getUsersUseCase = container.resolve(GetUsersUseCase)
         const users = await getUsersUseCase.call()
-        console.log(users)
 
         return  response.json(users)
 

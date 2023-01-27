@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --ignore-watch node_modules --respawn --transpile-only ./src/server.ts"
+    "dev": "tsnd --transpile-only --ignore-watch node_module --watch  --respawn src/server.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.9.0",
